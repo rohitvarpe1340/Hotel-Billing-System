@@ -1,0 +1,45 @@
+<header class="header">
+
+  <div class="left-section">
+    <div class="logo">
+      <span>🍽️</span>
+      <h2>Hotel Billing System</h2>
+    </div>
+  </div>
+
+  <div class="center-section">
+    <input
+      type="text"
+      placeholder="Search menu..."
+      class="search-box"
+    />
+  </div>
+
+  <div class="right-section">
+
+    <button class="icon-btn">
+
+    </button>
+
+    <div class="profile">
+
+      <img
+  [src]="
+    user?.profile_image
+      ? 'data:image/jpeg;base64,' + user.profile_image
+      : 'assets/img/rohits.jpg'
+  "
+  alt="profile"
+/>
+
+      <span>{{ user.name }}</span>
+
+      <button class="logout-btn" (click)="logout()">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+
+</header>

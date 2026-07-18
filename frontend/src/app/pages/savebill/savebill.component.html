@@ -1,0 +1,47 @@
+<div class="container">
+
+    <h2>Bill History</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Bill ID</th>
+                <th>Customer Name</th>
+                <th>Mobile</th>
+                <th>Total Amount</th>
+                <th>Download</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let bill of bills">
+
+                <td>{{bill.id}}</td>
+
+                <td>{{bill.customer_name}}</td>
+
+                <td>{{bill.customer_mobile}}</td>
+
+                <td>₹{{bill.total_amount}}</td>
+
+                 <td>
+            <button class="download-btn"
+                (click)="downloadBill(bill.id)">
+                Download PDF
+            </button>
+        </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+

@@ -1,0 +1,299 @@
+.bill-container {
+    padding: 20px;
+}
+
+.bill-container h2 {
+    margin-bottom: 20px;
+}
+
+.customer-section {
+    margin-bottom: 20px;
+}
+
+.customer-section input {
+
+    width: 350px;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+}
+
+.menu-section {
+
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+th {
+
+    background: #f8f9fa;
+
+}
+
+th,
+td {
+
+    padding: 15px;
+
+    border-bottom: 1px solid #e9ecef;
+
+}
+
+.qty-input {
+
+    width: 80px;
+
+    padding: 8px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+}
+
+.summary-card {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.generate-btn {
+
+    border: none;
+
+    background: #198754;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+.generate-btn:hover {
+
+    background: #157347;
+
+}
+.customer-section {
+
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+
+}
+
+.customer-section input {
+
+    width: 250px;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+}
+
+.modal-overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    rgba(0,0,0,.6);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.bill-modal{
+
+    width:900px;
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+}
+
+.hotel-header{
+
+    text-align:center;
+
+}
+
+.grand-total{
+
+    text-align:right;
+
+    margin-top:20px;
+
+}
+
+.modal-buttons{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+}
+
+.save-btn{
+
+    background:#198754;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:6px;
+
+}
+
+.print-btn{
+
+    background:#0d6efd;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:6px;
+
+}
+
+.close-btn{
+
+    background:#dc3545;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:6px;
+
+}
+
+
+@media print {
+
+  body * {
+    visibility: hidden;
+  }
+
+  .bill-modal,
+  .bill-modal * {
+    visibility: visible;
+  }
+
+  .bill-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .modal-buttons {
+    display: none;
+  }
+
+  .close-btn,
+  .save-btn,
+  .print-btn {
+    display: none;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 5px 0;
+  }
+
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+}

@@ -1,0 +1,56 @@
+<div class="back">
+<div class="container">
+
+  <div class="card">
+
+    <h2>Create Account</h2>
+
+    <form (ngSubmit)="register()">
+
+      <input
+        type="text"
+        placeholder="Full Name"
+        [(ngModel)]="user.name"
+        name="name"
+      >
+
+       <label>Profile Image</label>
+
+  <input
+    type="file"
+    (change)="onFileSelect($event)"
+    accept="image/*"
+  >
+
+      <input
+        type="email"
+        placeholder="Email"
+        [(ngModel)]="user.email"
+        name="email"
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="user.password"
+        name="password"
+      >
+
+      <button type="submit">
+        Register
+      </button>
+      <p>
+
+    Already have an account?
+
+    <a routerLink="/login">
+      Login Here
+    </a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</div>

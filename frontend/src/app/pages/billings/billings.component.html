@@ -1,0 +1,231 @@
+<div class="bill-container">
+
+    <h2>Generate Bill</h2>
+
+    <div class="customer-section">
+
+        <input
+            type="text"
+            placeholder="Customer Name"
+            [(ngModel)]="customerName">
+
+            <input
+        type="text"
+        placeholder="Mobile Number"
+        [(ngModel)]="customerMobile">
+
+    </div>
+
+    <div class="menu-section">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Select</th>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr
+                    *ngFor="let item of menuItems">
+
+                    <td>
+
+                        <input
+                            type="checkbox"
+                            [(ngModel)]="item.selected"
+                            (change)="updateTotal()">
+
+                    </td>
+
+                    <td>
+                        {{item.item_name}}
+                    </td>
+
+                    <td>
+                        {{item.category_name}}
+                    </td>
+
+                    <td>
+                        ₹ {{item.price}}
+                    </td>
+
+                    <td>
+
+                        <input
+                            class="qty-input"
+                            type="number"
+                            min="1"
+                            [(ngModel)]="item.quantity"
+                            (input)="updateTotal()">
+
+                    </td>
+
+                    <td>
+
+                        ₹ {{item.price * item.quantity}}
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="summary-card">
+
+        <h3>
+            Grand Total :
+            ₹ {{grandTotal}}
+        </h3>
+
+        <button
+            class="generate-btn"
+            (click)="generateBill()">
+
+            Generate Bill
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+class="modal-overlay"
+*ngIf="showBillModal">
+
+    <div class="bill-modal">
+
+        <div class="hotel-header">
+
+            <h1>{{hotelName}}</h1>
+
+            <p>{{hotelAddress}}</p>
+
+            <p>Mob : +91 9876543210</p>
+
+        </div>
+
+        <hr>
+
+        <div class="customer-info">
+
+            <p>
+                <strong>Customer :</strong>
+                {{billPreview.customerName}}
+            </p>
+
+            <p>
+                <strong>Mobile :</strong>
+                {{billPreview.customerMobile}}
+            </p>
+
+            <p>
+                <strong>Date :</strong>
+                {{billPreview.billDate |
+                date:'dd/MM/yyyy hh:mm a'}}
+            </p>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Rate</th>
+                    <th>Total</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr
+                *ngFor="let item of billPreview.items">
+
+                    <td>{{item.item_name}}</td>
+
+                    <td>{{item.quantity}}</td>
+
+                    <td>₹{{item.price}}</td>
+
+                    <td>
+                        ₹{{item.price * item.quantity}}
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <h2 class="grand-total">
+
+            Grand Total :
+            ₹{{billPreview.total}}
+
+        </h2>
+
+        <div class="modal-buttons">
+
+            <button
+            class="save-btn"
+            (click)="saveBill()">
+
+                Save Bill
+
+            </button>
+
+            <button
+            class="print-btn"
+            (click)="printBill()">
+
+                Print Bill
+
+            </button>
+
+            <button
+            class="close-btn"
+            (click)="closeModal()">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+

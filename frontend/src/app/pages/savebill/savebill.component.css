@@ -1,0 +1,104 @@
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+thead {
+    background: #212529;
+    color: white;
+}
+
+thead th {
+    padding: 14px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+tbody tr:hover {
+    background: #e0f2fe;
+}
+
+tbody td {
+    padding: 12px;
+    text-align: center;
+    color: #374151;
+    font-size: 14px;
+}
+
+tbody td:nth-child(4) {
+    font-weight: bold;
+    color: #16a34a;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    .container h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.download-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #dc2626;
+}

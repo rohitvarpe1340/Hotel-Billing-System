@@ -1,0 +1,41 @@
+<div class="back">
+<div class="container">
+
+  <div class="card">
+
+    <h2>Login</h2>
+
+    <form (ngSubmit)="login()">
+
+      <input
+        type="email"
+        placeholder="Email"
+        [(ngModel)]="user.email"
+        name="email"
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="user.password"
+        name="password"
+      >
+
+      <button type="submit">
+        Login
+      </button>
+      <p>
+    Don't have an account?
+
+    <a routerLink="/register">
+      Register Here
+    </a>
+  </p>
+
+    </form>
+
+  </div>
+
+</div>
+
+</div>

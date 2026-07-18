@@ -1,0 +1,11 @@
+.main-layout {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+.content-area {
+    flex: 1;
+    padding: 20px;
+    background: #f5f7fa;
+    overflow-x: auto;
+}

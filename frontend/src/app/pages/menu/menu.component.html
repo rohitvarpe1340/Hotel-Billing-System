@@ -1,0 +1,109 @@
+<div class="menu-container">
+
+    <h2>Menu Management</h2>
+
+    <div class="form-card">
+
+        <select
+            [(ngModel)]="category_id">
+
+            <option value="">
+                Select Category
+            </option>
+
+            <option
+                *ngFor="let category of categories"
+                [value]="category.id">
+
+                {{category.category_name}}
+
+            </option>
+
+        </select>
+
+        <input
+            type="text"
+            placeholder="Item Name"
+            [(ngModel)]="item_name">
+
+        <input
+            type="number"
+            placeholder="Price"
+            [(ngModel)]="price">
+
+        <button
+            class="save-btn"
+            (click)="saveMenu()">
+
+            {{isEditMode ? 'Update Item' : 'Add Item'}}
+
+        </button>
+
+    </div>
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr
+                    *ngFor="let item of menuList">
+
+                    <td>{{item.id}}</td>
+
+                    <td>
+                        {{item.category_name}}
+                    </td>
+
+                    <td>
+                        {{item.item_name}}
+                    </td>
+
+                    <td>
+                        ₹ {{item.price}}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="edit-btn"
+                            (click)="editMenu(item)">
+
+                            Edit
+
+                        </button>
+
+                        <button
+                            class="delete-btn"
+                            (click)="deleteMenu(item.id)">
+
+                            Delete
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
